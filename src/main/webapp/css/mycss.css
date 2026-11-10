@@ -203,7 +203,178 @@ li a{
   .year { padding-right: 0; }
 }
 
+/* Shared modern application shell */
+:root {
+  --ink: #10213f;
+  --muted: #60708f;
+  --surface: rgba(255, 255, 255, .88);
+  --line: rgba(16, 33, 63, .12);
+  --accent: #0aa88f;
+  --accent-dark: #087866;
+  --navy: #102a56;
+}
 
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  background: #eef4fb;
+  font-family: Arial, sans-serif;
+}
+
+.entirePageRegistration,
+.entirePageStudent,
+.entirePageStudentHub,
+.entirePageFacultyHub,
+.entirePageMain,
+.entirePageAfterDropDown {
+  min-height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #f5f9ff 0%, #e6f3f2 100%);
+}
+
+.entirePageRegistration {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(circle at 85% 5%, rgba(112, 225, 208, .22), transparent 28%), linear-gradient(135deg, #102a56, #193e76 55%, #0e8d7d);
+}
+
+body > div > ul,
+.ulLogout,
+body > div > form + ul {
+  background: rgba(16, 42, 86, .96);
+  box-shadow: 0 8px 26px rgba(16, 42, 86, .12);
+}
+
+ul:not(.indexNav) li a,
+.ulLogout li a {
+  padding: 16px 18px;
+  color: rgba(255, 255, 255, .78);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+  transition: background .2s ease, color .2s ease;
+}
+
+ul:not(.indexNav) li a:hover,
+.ulLogout li a:hover,
+ul:not(.indexNav) li a:focus-visible,
+.ulLogout li a:focus-visible {
+  color: #fff;
+  background: rgba(112, 225, 208, .16);
+}
+
+ul:not(.indexNav) li a.active,
+.ulLogout li a.active {
+  color: #082242;
+  background: #70e1d0;
+}
+
+.formCenter3,
+.centerJustify,
+.element,
+.resultBoard,
+.boardReport,
+.quiz,
+.editForm2 {
+  color: var(--ink);
+}
+
+.formCenter3 {
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.formCenter3 h2,
+.formCenter3 h1,
+.titleIndexStudent,
+.titleIndexFaculty {
+  color: var(--ink) !important;
+  font-family: Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -.04em;
+}
+
+.editForm2,
+.formRow,
+.quiz,
+.resultBoard,
+.boardReport,
+.element,
+.backNewTest,
+.backAddQue,
+.backDelQue {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 18px 46px rgba(16, 42, 86, .1);
+}
+
+.editForm2 {
+  min-width: min(360px, calc(100vw - 48px));
+  box-sizing: border-box;
+}
+
+.formRow { border: 0; box-shadow: none; background: transparent; margin-bottom: 14px; }
+.formRow input,
+.formRow select,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(16, 33, 63, .18);
+  border-radius: 10px;
+  padding: 12px 13px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+}
+
+.signButton,
+.button,
+.addButton1,
+button,
+input[type="submit"] {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  color: #082242;
+  background: #70e1d0;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.signButton:hover,
+.button:hover,
+.addButton1:hover,
+button:hover,
+input[type="submit"]:hover {
+  background: #94f0e0;
+  box-shadow: 0 8px 22px rgba(10, 168, 143, .2);
+  transform: translateY(-1px);
+}
+
+.bottom-bar,
+.bottom-barADM {
+  position: fixed;
+  z-index: 4;
+  height: 54px;
+  background: rgba(16, 42, 86, .94);
+}
+
+@media (max-width: 700px) {
+  ul:not(.indexNav) li,
+  .ulLogout li { float: none; display: inline-block; }
+  ul:not(.indexNav) li a,
+  .ulLogout li a { padding: 13px 10px; font-size: .74rem; }
+  .formCenter3 { padding: 56px 16px; }
+  .editForm2 { min-width: 0; width: min(100%, 390px); }
+}
 
 /***** Registration Form Page *****/
 .entirePageRegistration{
